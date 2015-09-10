@@ -6,7 +6,7 @@ private:
 	std::string name_f;
 	std::string name;
 	std::string ot;
-	struct day {
+	struct dayi {
 		int day;
 		int month;
 		int yar;
@@ -18,19 +18,19 @@ private:
 	int gruppa;
 public:
 	Student();
-	Student(int, std::string, std::string, std::string, day, day, day, std::string, int, std::string, int, int);
+	Student(int, std::string, std::string, std::string, int, int, int, std::string, int, std::string, int, int);
 	Student(const Student&);
 	~Student(void);
 	void setId(int);
 	int getId();
 	void setName_f(std::string);
 	std::string getName_f();
-	void setName(string);
+	void setName(std::string);
 	std::string getName(void);
 	void setOt(std::string);
 	std::string getOt();
-	void setDay(day);
-	void getDay(void);
+	void setDay(int,int,int);
+	int getDay(void);
 	void setAdres(std::string);
 	void setTelef(int);
 	std::string getAdres(void);
@@ -41,6 +41,6 @@ public:
 	int getKurs(void);
 	void setGruppa(int);
 	int getGruppa(void);
+	int stAge(int, int);
 	void print();
-	void age(int);
 };

@@ -1,25 +1,57 @@
-#include "student.h"
+#include "Stud.h"
 using namespace std;
 Student::Student()
-{}
-Student::Student(const Student &)
 {
+	cout << "Constructor bez parametr" << endl;
+	id = 0;
+	name_f = "";
+	name = "";
+	ot = "";
+	d.day = 0;
+	d.month = 0;
+	d.yar = 0;
+	adres = "";
+	telef = 0;
+	fak="";
+	kurs = 0;
+	gruppa = 0;
 }
-Student::Student(int ID, std::string NAME_F, std::string NAME, std::string OT, day D, day M, day Y, std::string ADRES, int TELEF, std::string FAK, int KURS, int GRUPPA)
+Student::Student(const Student &a)
 {
+	cout << "Copir constructor" << endl;
+	id = a.id;
+	name_f = a.name_f;
+	name = a.name;
+	ot = a.ot;
+	d.day = a.d.day;
+	d.month = a.d.month;
+	d.yar = a.d.yar;
+	adres = a.adres;
+	telef = a.telef;
+	fak = a.fak;
+	kurs = a.kurs;
+	gruppa = a.gruppa;
+}
+Student::Student(int ID, std::string NAME_F, std::string NAME, std::string OT, int D, int M, int Y, std::string ADRES, int TELEF, std::string FAK, int KURS, int GRUPPA)
+{
+	cout << "Constructor s parametr" << endl;
 	id = ID;
-	strcpy(name_f, NAME_F);
-	strcpy(name, NAME);
-	strcpy(ot, OT);
-	d = DAY;
-	strcpy(adres, ADRES);
+	name_f= NAME_F;
+	name=NAME;
+	ot=OT;
+	d.day = D;
+	d.month = M;
+	d.yar = Y;
+	adres=ADRES;
 	telef = TELEF;
-	strcpy(fak, FAK);
+	fak=FAK;
 	kurs = KURS;
 	gruppa = GRUPPA;
 }
 Student::~Student(void)
-{}
+{
+	cout << "Destructor" << endl;
+}
 void Student::setId(int ID)
 {
 	id = ID;
@@ -30,7 +62,7 @@ int Student::getId(void)
 }
 void Student::setName_f(std::string NAME_F)
 {
-	strcpy(NAME_F, name_f);
+	NAME_F=name_f;
 }
 std::string Student::getName_f(void)
 {
@@ -38,7 +70,7 @@ std::string Student::getName_f(void)
 }
 void Student::setName(std::string NAME)
 {
-	strcpy(NAME, name);
+	NAME=name;
 }
 std::string Student::getName(void)
 {
@@ -46,19 +78,19 @@ std::string Student::getName(void)
 }
 void Student::setOt(std::string OT)
 {
-	strcpy(OT, ot);
+	OT=ot;
 }
 std::string Student::getOt(void)
 {
 	return ot;
 }
-void Student::setDay(day D, day M, day Y)
+void Student::setDay(int D, int M, int Y)
 {
 	d.day = D;
 	d.month = M;
 	d.yar = Y;
 }
-void Student::getDay(void)
+int Student::getDay(void)
 {
 	return d.day;
 	return d.month;
@@ -66,7 +98,7 @@ void Student::getDay(void)
 }
 void Student::setAdres(std::string ADRES)
 {
-	strcpy(ADRES, adres);
+	ADRES=adres;
 }
 std::string Student::getAdres(void)
 {
@@ -82,7 +114,7 @@ int Student::getTelef(void)
 }
 void Student::setFak(std::string FAK)
 {
-	strcpy(FAK, fak);
+	fak=FAK;
 }
 std::string Student::getFak(void)
 {
@@ -104,14 +136,12 @@ int Student::getGruppa(void)
 {
 	return gruppa;
 }
-void Student::setAge(int DAY)
+int Student::stAge(int Y,int b)
 {
+	b = 2015 - Y;
+	return b;
+}
 
-}
-int Student::getDay(void)
-{
-	return
-}
 void Student::print()
 {
 	cout << "Id - " << Student::id << endl;
