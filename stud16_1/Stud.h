@@ -1,5 +1,6 @@
 #pragma once
 #include<iostream>
+#include<string>
 class Student {
 private:
 	int id;
@@ -26,21 +27,23 @@ public:
 	void setName_f(std::string);
 	std::string getName_f();
 	void setName(std::string);
-	std::string getName(void);
+	std::string getName();
 	void setOt(std::string);
 	std::string getOt();
 	void setDay(int,int,int);
-	int getDay(void);
+	int getDay();
+	int getMonth();
+	int getYar();
 	void setAdres(std::string);
 	void setTelef(int);
-	std::string getAdres(void);
+	std::string getAdres();
 	void setFak(std::string);
-	std::string getFak(void);
-	int getTelef(void);
+	std::string getFak();
+	int getTelef();
 	void setKurs(int);
-	int getKurs(void);
+	int getKurs();
 	void setGruppa(int);
-	int getGruppa(void);
+	int getGruppa();
 	int stAge(int, int);
 	void print();
 };

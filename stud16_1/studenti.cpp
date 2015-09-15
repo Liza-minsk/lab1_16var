@@ -1,4 +1,6 @@
+#include "stdafx.h"
 #include "Stud.h"
+#include<iostream>
 using namespace std;
 Student::Student()
 {
@@ -56,7 +58,7 @@ void Student::setId(int ID)
 {
 	id = ID;
 }
-int Student::getId(void)
+int Student::getId()
 {
 	return id;
 }
@@ -64,7 +66,7 @@ void Student::setName_f(std::string NAME_F)
 {
 	NAME_F=name_f;
 }
-std::string Student::getName_f(void)
+std::string Student::getName_f()
 {
 	return name_f;
 }
@@ -72,7 +74,7 @@ void Student::setName(std::string NAME)
 {
 	NAME=name;
 }
-std::string Student::getName(void)
+std::string Student::getName()
 {
 	return name;
 }
@@ -80,7 +82,7 @@ void Student::setOt(std::string OT)
 {
 	OT=ot;
 }
-std::string Student::getOt(void)
+std::string Student::getOt()
 {
 	return ot;
 }
@@ -90,17 +92,22 @@ void Student::setDay(int D, int M, int Y)
 	d.month = M;
 	d.yar = Y;
 }
-int Student::getDay(void)
+int Student::getDay()
 {
 	return d.day;
+}
+int Student::getMonth()
+{
 	return d.month;
-	return d.yar;
+}
+int Student::getYar()
+	{return d.yar;
 }
 void Student::setAdres(std::string ADRES)
 {
 	ADRES=adres;
 }
-std::string Student::getAdres(void)
+std::string Student::getAdres()
 {
 	return adres;
 }
@@ -108,7 +115,7 @@ void Student::setTelef(int TELEF)
 {
 	telef = TELEF;
 }
-int Student::getTelef(void)
+int Student::getTelef()
 {
 	return telef;
 }
@@ -116,7 +123,7 @@ void Student::setFak(std::string FAK)
 {
 	fak=FAK;
 }
-std::string Student::getFak(void)
+std::string Student::getFak()
 {
 	return fak;
 }
@@ -124,7 +131,7 @@ void Student::setKurs(int KURS)
 {
 	kurs = KURS;
 }
-int Student::getKurs(void)
+int Student::getKurs()
 {
 	return kurs;
 }
@@ -132,7 +139,7 @@ void Student::setGruppa(int GRUPPA)
 {
 	gruppa = GRUPPA;
 }
-int Student::getGruppa(void)
+int Student::getGruppa()
 {
 	return gruppa;
 }
@@ -148,7 +155,7 @@ void Student::print()
 	cout << "Name_f - " << Student::name_f << endl;
 	cout << "Name - " << Student::name << endl;
 	cout << "Ot - " << Student::ot << endl;
-	cout << "Day - " << Student::d << endl;
+	cout << "Day - " << Student::d.day<<" "<<d.month<<" "<<d.yar << endl;
 	cout << "Adres - " << Student::adres << endl;
 	cout << "Telef - " << Student::telef << endl;
 	cout << "Fakyl - " << Student::fak << endl;
